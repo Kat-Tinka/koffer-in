@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Koffer in {...} = () => {
+const Home = () => {
   return (
-    <div>Koffer in {...}</div>
-  )
-}
+    <div>
+      Welcome! "Ich hab noch einen Koffer in... Berlin"<p></p>
+    </div>
+  );
+};
 
-export default Koffer in {...}
+export default Home;

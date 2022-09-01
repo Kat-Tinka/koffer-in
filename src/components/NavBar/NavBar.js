@@ -22,7 +22,8 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Koffer in ...
+            Koffer in ... / <br />
+            One Little Suitcase in...
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

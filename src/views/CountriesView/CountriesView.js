@@ -17,6 +17,7 @@ const CountriesView = () => {
 
   return (
     <div>
+      <div>COUNTRIES</div>
       {countries.map((country) => (
         <Country countries={country} />
       ))}

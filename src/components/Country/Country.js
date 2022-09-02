@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./Country.css";
+import { useNavigate, Link } from "react-router-dom";
 
 // const Country = () => {
 //   return <div>Country</div>;
@@ -15,12 +16,18 @@ import "./Country.css";
 const Countries = (countries) => {
   console.log("Countries :>> ", countries);
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    console.log("You clicked!");
+  };
+
   return (
     <div className="country-container">
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
-          height="140"
+          height="100%"
           image={countries.countries.flags.png}
           // capital={countries.countries.capital}
         />
@@ -36,8 +43,15 @@ const Countries = (countries) => {
           {countries.countries.maps.googleMaps}
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small" onClick={handleClick}>
+            Share
+          </Button>
+          <Link
+            to={`/country/${countries.countries.name.official}`}
+            state={{ countries }}
+          >
+            <Button size="small">Learn More</Button>
+          </Link>
         </CardActions>
       </Card>
     </div>

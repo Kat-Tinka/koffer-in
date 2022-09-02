@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Country from "../../components/Country/Country";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const CountriesView = () => {
   const [countries, setCountries] = useState([]);
   // const [continents, setContinents] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getData();
@@ -27,6 +31,8 @@ const CountriesView = () => {
       </div>
   ); */}
       <div>COUNTRIES</div>
+
+      {/* <Link to="/CountryDetails"></Link> */}
       {countries.map((country) => (
         <Country countries={country} />
       ))}

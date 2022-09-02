@@ -7,6 +7,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./Country.css";
 
+// const Country = () => {
+//   return <div>Country</div>;
+// };
+
+// export default Country;
 const Countries = (countries) => {
   console.log("Countries :>> ", countries);
 
@@ -17,15 +22,17 @@ const Countries = (countries) => {
           component="img"
           height="140"
           image={countries.countries.flags.png}
+          // capital={countries.countries.capital}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {countries.countries.name.common}
             <div>Official Name: {countries.countries.name.official}</div>
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Some Text
-          </Typography>
+          {/* <Typography variant="body2" color="text.secondary">
+            Languages:
+            {countries.countries.languages}
+          </Typography> */}
           {countries.countries.maps.googleMaps}
         </CardContent>
         <CardActions>

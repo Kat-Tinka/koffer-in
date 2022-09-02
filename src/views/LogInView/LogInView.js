@@ -1,7 +1,9 @@
-import React from "react";
+// import React from "react";
+// import NavBar from "./NavBar/NavBar";
 
-const LogInView = () => {
-  return <div>LogIn-View</div>;
-};
+// const LogInView = () => {
+//   return <div>LogIn-View</div>;
+//   // <NavBar />;
+// };
 
-export default LogInView;
+// export default LogInView;

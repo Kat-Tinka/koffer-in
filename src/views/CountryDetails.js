@@ -13,7 +13,7 @@ const CountryDetails = () => {
   useEffect(() => {}, [name]);
 
   const fetchCountryData = async () => {
-    const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+    const res = await fetch(`https://restcountries.com/v3.1/name/${name}?`);
   };
 
   return (

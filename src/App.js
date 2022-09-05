@@ -35,10 +35,10 @@ function App() {
             <Link to="/region">Region</Link>
           </li>
           <li>
-            <Link to="/countries">CountriesView</Link>
+            <Link to="/countries">Country</Link>
           </li>
           <li>
-            <Link to="/country/:countryname">CountryDetails</Link>
+            <Link to="/region">Region</Link>
           </li>
         </ul>
         <Routes>

@@ -11,15 +11,13 @@ const CountryDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { name } = useParams();
 
-  // useEffect(() => {}, [name, capital, region]);
-
   const fetchCountryData = async () => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${name}?`);
-    // const data = await res.json();
-    // setCountry(data);
   };
 
   const countryInfos = location.state.countries.countries;
+  //! check it out:How to use useParams here?
+  //! const { id } = useParams();
 
   return (
     <div>
@@ -30,6 +28,10 @@ const CountryDetails = () => {
         ) : (
           <Card>
             <section>
+              //! //!
+              {/* <h2>
+              //! Country-Infos with id for:{id} <br /> {countryInfos.name.common}
+              //!</h2> */}
               <h2>
                 Country-Infos for: <br /> {countryInfos.name.common}
               </h2>

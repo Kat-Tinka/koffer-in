@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
@@ -15,24 +15,43 @@ import ChatView from "./views/ChatView/ChatView";
 
 function App() {
   return (
-    <div className="container">
-      <header className="header">
-        <h6>Little Suitcase in...</h6>
-      </header>
-      {/* <div className="App"> */}
-      {/* <h1>That's the App.js</h1> */}
-      <NavBar />
-      {/* const navigate = useNavigate(); */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LogInView />} />
-        <Route path="/chat" element={<ChatView />} />
-
-        <Route path="/region" element={<RegionView />} />
-        <Route path="/countries" element={<CountriesView />} />
-        <Route path="/country/:countryname" element={<CountryDetails />} />
-      </Routes>
-    </div>
+    <>
+      <div className="container">
+        <header className="header">
+          <h6>Little Suitcase in...</h6>
+        </header>
+        <NavBar />
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/login">LogIn</Link>
+          </li>
+          <li>
+            <Link to="/chat">Chat</Link>
+          </li>
+          <li>
+            <Link to="/region">Region</Link>
+          </li>
+          <li>
+            <Link to="/countries">CountriesView</Link>
+          </li>
+          <li>
+            <Link to="/country/:countryname">CountryDetails</Link>
+          </li>
+        </ul>
+        <Routes>
+          {/* indexpath is a single / => thats the root path of the application */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LogInView />} />
+          <Route path="/chat" element={<ChatView />} />
+          <Route path="/region" element={<RegionView />} />
+          <Route path="/countries" element={<CountriesView />} />
+          <Route path="/country/:countryname" element={<CountryDetails />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

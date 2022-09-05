@@ -24,8 +24,6 @@ const CountriesView = () => {
   return (
     <div>
       <div>ALL COUNTRIES</div>
-      {/* <Link to="/CountryDetails"></Link> */}
-      {/* {isLoading ? <h1>Loading...</h1>}; */}
       {countries.map((country) => (
         <Country countries={country} />
       ))}

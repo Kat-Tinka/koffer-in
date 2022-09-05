@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const CountriesView = () => {
   const [countries, setCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState([true]);
+  // const [isLoading, setIsLoading] = useState([true]);
   // const [continents, setContinents] = useState([]);
 
   const navigate = useNavigate();
@@ -32,5 +32,5 @@ const CountriesView = () => {
     </div>
   );
 };
-
+// }
 export default CountriesView;

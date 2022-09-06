@@ -49,7 +49,8 @@ const CountryDetails = () => {
                 Country-Infos for: <br /> {countryInfos.name.common}
               </h2>
               <h3>Flags:</h3>
-              {/* {countryInfos.png} */}
+              <img src={countryInfos.flags.png} alt="" />
+
               <h3>Capital:</h3>
               {countryInfos.capital}
               <h3>Continents:</h3>
@@ -69,6 +70,23 @@ const CountryDetails = () => {
               <h3>Population:</h3>
               {countryInfos.population}
               <h3>Languages:</h3>
+              {languageKey.map((language) => (
+                <p>{language}</p>
+              ))}
+
+              {/* const renderlanguageK = languageKey.map((language) =>
+              <div>{language}</div>); const renderlanguageK =
+              languageKey.map((language, index)=>
+              <div key={index}>{language}</div>); return (
+              <div className="app">
+                <div>Languages are</div>
+                {renderlanguageK}
+              </div>
+              ); */}
+              {/* <div key={index}>{language}</div>); return(
+              <div>Languages are:</div>
+              {renderlanguageK} */}
+              {/* ); } */}
               {/* How to get the "languages, which is an object?*/}
               {/* {countryInfos.languages.toString()} */}
               {/* {countryInfos.languages.map((language) => (
@@ -91,7 +109,6 @@ const CountryDetails = () => {
                   <p>{countryInfos.currencies[curr].symbol}</p>
                 </div>
               ))}
-
               <h3>Independent:</h3>
               {countryInfos.independent.toString()}
               <h3>Car-Side:</h3>

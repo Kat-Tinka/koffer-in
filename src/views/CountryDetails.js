@@ -11,10 +11,7 @@ const CountryDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { name } = useParams();
   // const borders = [];
-  /* const obj = {
-    "first name": "Ottavia",
-  };
-  console.log(obj["first name"]) */
+
   const fetchCountryData = async () => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${name}?`);
   };
@@ -69,7 +66,12 @@ const CountryDetails = () => {
               {/* How to get the "languages, which is an object?*/}
               {/* {countryInfos.languages} */}
               <h3>Currencies:</h3>
-              {/* how to get the name and symbol of "currencies"? */}
+              {/* how to get the name and symbol of "currencies"? =>extract key (because there ARE DIFFERENT CURRENCIES=> YOU CAN'T USE FOR EXAMPEL ONLY EUR(=key)=> transform it into string(need another notation)=>you name string as key  
+              In an example if the key would be "first name"=> JSX wouldn't understand the empty space in betwenn the words=> so you need to write:
+               /* const obj = {
+              "first name": "O",
+               };
+               console.log(obj["first name"]) */}
               {currencyKey.map((curr) => (
                 <div>
                   <p>{curr}</p>

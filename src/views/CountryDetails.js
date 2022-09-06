@@ -11,14 +11,18 @@ const CountryDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { name } = useParams();
   // const borders = [];
-
+  /* const obj = {
+    "first name": "Ottavia",
+  };
+  console.log(obj["first name"]) */
   const fetchCountryData = async () => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${name}?`);
   };
   const countryInfos = location.state.countries.countries;
   console.log("country>Border", countryInfos.borders);
   console.log(location.state.countries.countries.independent.toString());
-
+  const currencyKey = Object.keys(countryInfos.currencies);
+  console.log("currencyKey", currencyKey);
   //! check it out:How to use useParams here?
   //! const { id } = useParams();
 
@@ -34,6 +38,10 @@ const CountryDetails = () => {
               {/* <h2>
               //! Country-Infos with id for:{id} <br /> {countryInfos.name.common}
               //!</h2> */}
+              <iframe
+                src="https://goo.gl/maps/HjgWDCNKRAYHrkMn8"
+                frameborder="0"
+              ></iframe>
               <h2>
                 Country-Infos for: <br /> {countryInfos.name.common}
               </h2>
@@ -50,7 +58,7 @@ const CountryDetails = () => {
               <h3>Borders:</h3>
               <div>
                 {/* map over and display an array of objects: */}
-                {countryInfos.borders.map((border) => (
+                {countryInfos.borders?.map((border) => (
                   <div>{border}</div>
                 ))}
               </div>
@@ -62,7 +70,14 @@ const CountryDetails = () => {
               {/* {countryInfos.languages} */}
               <h3>Currencies:</h3>
               {/* how to get the name and symbol of "currencies"? */}
-              {countryInfos.currencies.toString()}
+              {currencyKey.map((curr) => (
+                <div>
+                  <p>{curr}</p>
+                  <p>{countryInfos.currencies[curr].name}</p>
+                  <p>{countryInfos.currencies[curr].symbol}</p>
+                </div>
+              ))}
+
               <h3>Independent:</h3>
               {countryInfos.independent.toString()}
               <h3>Car-Side:</h3>

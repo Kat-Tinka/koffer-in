@@ -104,9 +104,9 @@ const CountryDetails = () => {
                console.log(obj["first name"]) */}
               {currencyKey.map((curr) => (
                 <div>
-                  <p>{curr}</p>
-                  <p>{countryInfos.currencies[curr].name}</p>
-                  <p>{countryInfos.currencies[curr].symbol}</p>
+                  <p>Currency Key: {curr}</p>
+                  <p>Currency Name:{countryInfos.currencies[curr].name}</p>
+                  <p>Currency Symbol:{countryInfos.currencies[curr].symbol}</p>
                 </div>
               ))}
               <h3>Independent:</h3>

@@ -10,18 +10,24 @@ const CountryDetails = () => {
   const [country, setCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { name } = useParams();
-  // const borders = [];
 
   const fetchCountryData = async () => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${name}?`);
   };
+
   const countryInfos = location.state.countries.countries;
   console.log("country>Border", countryInfos.borders);
   console.log(location.state.countries.countries.independent.toString());
+
   const currencyKey = Object.keys(countryInfos.currencies);
   console.log("currencyKey", currencyKey);
-  //! check it out:How to use useParams here?
-  //! const { id } = useParams();
+
+  // const languageKey = Object.apply(countryInfos.languages).toString;
+
+  //extract the languages => to an array:
+  const languageKey = Object.keys(countryInfos.languages);
+
+  console.log("languages", languageKey);
 
   return (
     <div>
@@ -64,7 +70,13 @@ const CountryDetails = () => {
               {countryInfos.population}
               <h3>Languages:</h3>
               {/* How to get the "languages, which is an object?*/}
-              {/* {countryInfos.languages} */}
+              {/* {countryInfos.languages.toString()} */}
+              {/* {countryInfos.languages.map((language) => (
+                <div>
+                  <p>{language}</p>
+                  <p>{countryInfos.languages[language]}</p>
+                </div>
+              ))} */}
               <h3>Currencies:</h3>
               {/* how to get the name and symbol of "currencies"? =>extract key (because there ARE DIFFERENT CURRENCIES=> YOU CAN'T USE FOR EXAMPEL ONLY EUR(=key)=> transform it into string(need another notation)=>you name string as key  
               In an example if the key would be "first name"=> JSX wouldn't understand the empty space in betwenn the words=> so you need to write:

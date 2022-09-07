@@ -1,12 +1,16 @@
-import React from "react" .countriesContainer {
-  /* display: flex; */
+.countriesContainer {
+  /* border: 2px solid black; */
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
   display: grid;
   grid-template-columns: 10rem 10rem 10rems;
   grid-gap: 1rem;
   grid-auto-flow: row;
-  /* flex-direction: column;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 
   /* Row xs={1} sm={2} md={4} lg={4} xl={6} className="g-4" */
 }

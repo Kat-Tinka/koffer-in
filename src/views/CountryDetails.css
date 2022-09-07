@@ -4,12 +4,12 @@
   text-align: center;
 }
 
-* {
+/* * {
   padding: 4px;
-  margin: ;
+  margin: 1px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-}
+} */
 
 body {
   background-color: #8d2437;
@@ -34,9 +34,9 @@ body {
   background: #0c4b8ac3;
 }
 
-.header h6 {
+/* .header h6 {
   display: flex;
   align-items: center;
   font-size: 1rem;
   color: rgb(15, 110, 110);
-}
+} */

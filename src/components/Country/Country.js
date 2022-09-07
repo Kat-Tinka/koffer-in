@@ -24,45 +24,47 @@ const Countries = (countries) => {
   };
 
   return (
-    <div className="country-container">
-      {/* <section
+    <div className="wrapper">
+      <div className="country-container">
+        {/* <section
         className="grid grid-cols-1 gap-5 p-5
         md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto"
       > */}
-      <Card sx={{ maxWidth: 345, maxHeight: 7500 }}>
-        <CardMedia
-          component="img"
-          height="100%"
-          image={countries.countries.flags.png}
-          // capital={countries.countries.capital}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h6" component="div">
-            <div>
-              {/* <Typography className="font-bold" component="div"> */}
-              {countries.countries.name.common} <br /> Official Name:
-              <br />
-              {countries.countries.name.official}
-              {/* <div>Official Name: {countries.countries.name.official}</div> */}
-            </div>
+        <Card sx={{ maxWidth: 345, maxHeight: 7500 }}>
+          <CardMedia
+            component="img"
+            height="100%"
+            image={countries.countries.flags.png}
+            // capital={countries.countries.capital}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="div">
+              <div>
+                {/* <Typography className="font-bold" component="div"> */}
+                {countries.countries.name.common} <br /> Official Name:
+                <br />
+                {countries.countries.name.official}
+                {/* <div>Official Name: {countries.countries.name.official}</div> */}
+              </div>
 
-            <div>
-              Continent: {countries.countries.continents}
-              <br />
-              Capital:
-              {countries.countries.capital}
-            </div>
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Link
-            to={`/country/${countries.countries.name.official}`}
-            state={{ countries }}
-          >
-            <Button size="small">Learn More</Button>
-          </Link>
-        </CardActions>
-      </Card>
+              <div>
+                Continent: {countries.countries.continents}
+                <br />
+                Capital:
+                {countries.countries.capital}
+              </div>
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Link
+              to={`/country/${countries.countries.name.official}`}
+              state={{ countries }}
+            >
+              <Button size="small">Learn More</Button>
+            </Link>
+          </CardActions>
+        </Card>
+      </div>
     </div>
   );
 };

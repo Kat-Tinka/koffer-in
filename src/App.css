@@ -5,14 +5,15 @@
 }
 
 * {
-  padding: 20px;
+  padding: 5px;
   margin: 5px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: #24538d;
+  /* background-color: #2d496db0; */
+  background-image: url(http://localhost:3000/assets/globalPic.jpg);
 }
 
 s .container {
@@ -23,7 +24,7 @@ s .container {
   position: absolute;
   transform: translate(50%, -50%);
   border-radius: 6px;
-  box-shadow: ;
+  /* box-shadow: ; */
 }
 
 .header {

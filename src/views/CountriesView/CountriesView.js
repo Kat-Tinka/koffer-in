@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Country from "../../components/Country/Country";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
+import "./CountriesView.css";
 
 const CountriesView = () => {
   const [countries, setCountries] = useState([]);
@@ -24,9 +25,11 @@ const CountriesView = () => {
   return (
     <div>
       <div>ALL COUNTRIES</div>
-      {countries.map((country) => (
-        <Country countries={country} />
-      ))}
+      <div className="countriesContainer">
+        {countries.map((country) => (
+          <Country countries={country} />
+        ))}
+      </div>
     </div>
   );
 };

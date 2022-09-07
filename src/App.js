@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+// import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
@@ -8,6 +9,7 @@ import CountryDetails from "./views/CountryDetails";
 import RegionView from "./views/RegionView/RegionView";
 import LogInView from "./views/LogInView/LogInView";
 import ChatView from "./views/ChatView/ChatView";
+import { useState } from "react";
 
 // function CountryDetail(params) {
 //   const navigate = useNavigate();
@@ -16,7 +18,13 @@ import ChatView from "./views/ChatView/ChatView";
 function App() {
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        // style={{
+        //   backgroundImage: "url(/assets/globalPic.jpg)",
+        //   width: "100vw",
+        // }}
+      >
         <header className="header">
           <h6>Little Suitcase in...</h6>
         </header>

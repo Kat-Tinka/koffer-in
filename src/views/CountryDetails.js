@@ -22,8 +22,6 @@ const CountryDetails = () => {
   const currencyKey = Object.keys(countryInfos.currencies);
   console.log("currencyKey", currencyKey);
 
-  // const languageKey = Object.apply(countryInfos.languages).toString;
-
   //extract the languages => to an array:
   const languageKey = Object.keys(countryInfos.languages);
 

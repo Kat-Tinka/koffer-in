@@ -27,14 +27,15 @@ const Countries = (countries) => {
   return (
     <div className="wrapper">
       <div className="country-container">
-        {/* <section
+        {/* <div
         className="grid grid-cols-1 gap-5 p-5
         md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto"
       > */}
-        <Card sx={{ maxWidth: 345, maxHeight: 7500 }}>
+        <Card className="country-card" sx={{ maxWidth: 345, maxHeight: 7500 }}>
           <CardMedia
             component="img"
-            height="100%"
+            // height="100%"
+            // height="50px"
             image={countries.countries.flags.png}
             // capital={countries.countries.capital}
           />

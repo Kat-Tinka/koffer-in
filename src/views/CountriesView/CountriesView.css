@@ -1,16 +1,17 @@
 .countriesContainer {
-  /* border: 2px solid black; */
   padding: 25px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
   display: grid;
-  grid-template-columns: 10rem 10rem 10rems;
+  grid-template-columns: 20rem 20rem 20rem 20rem 20rem;
   grid-gap: 1rem;
   grid-auto-flow: row;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* className="grid grid-cols-1 gap-5 p-5
+        md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto" */
 
   /* Row xs={1} sm={2} md={4} lg={4} xl={6} className="g-4" */
 }

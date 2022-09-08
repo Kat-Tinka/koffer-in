@@ -25,9 +25,6 @@ function App() {
         //   width: "100vw",
         // }}
       >
-        <header className="header">
-          <h6>Little Suitcase in...</h6>
-        </header>
         <NavBar />
         <ul>
           <li>

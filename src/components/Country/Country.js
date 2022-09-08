@@ -31,8 +31,9 @@ const Countries = (countries) => {
         className="grid grid-cols-1 gap-5 p-5
         md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto"
       > */}
-        <Card className="country-card" sx={{ maxWidth: 345, maxHeight: 7500 }}>
+        <Card className="country-card">
           <CardMedia
+            className="flag-card"
             component="img"
             // height="100%"
             // height="50px"

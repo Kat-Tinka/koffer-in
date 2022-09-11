@@ -29,7 +29,7 @@ const Countries = (countries) => {
       <div className="country-container">
         {/* <div
         className="grid grid-cols-1 gap-5 p-5
-        md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto"
+        md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  2xl:grid-cols-5 2xl:container 2xl:mx-auto"</div>
       > */}
         <Card className="country-card">
           <CardMedia

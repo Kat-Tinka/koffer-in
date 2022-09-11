@@ -48,7 +48,8 @@ const CountryDetails = () => {
               </h2>
               <h3>Flags:</h3>
               <img src={countryInfos.flags.png} alt="" />
-
+              <p>latitude: {countryInfos.latlng[0]}</p>
+              <p>longitude: {countryInfos.latlng[1]}</p>
               <h3>Capital:</h3>
               {countryInfos.capital}
               <h3>Continents:</h3>

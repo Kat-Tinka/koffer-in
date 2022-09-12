@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -22,13 +23,19 @@ export default function NavBar() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          {/* sx={{ xs: "1", sm: "2", md: "4", lg: "4", xl: "6" }} */}
           Koffer in ... / <br />
           One Little Suitcase in...
         </Typography>
-        <Button color="inherit">Register</Button>
-        {/* <Link to="/Register>Register</Link>" */}
-        <Button color="inherit">Login</Button>
+        <div></div>
+        <Link to="/">Home </Link>| <Link to="/chat">Chat </Link>|{" "}
+        <Link to="/region">Region </Link>|{" "}
+        <Link to="/countries">Countries </Link>|{" "}
+        <Button href="/register" color="inherit">
+          Register
+        </Button>
+        <Button href="/login" color="inherit">
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   );

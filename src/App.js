@@ -29,26 +29,7 @@ function App() {
         // }}
       >
         <NavBar />
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">LogIn</Link>
-          </li>
-          <li>
-            <Link to="/chat">Chat</Link>
-          </li>
-          <li>
-            <Link to="/region">Region</Link>
-          </li>
-          <li>
-            <Link to="/countries">Countries</Link>
-          </li>
-        </ul>
+
         <Routes>
           {/* indexpath is a single / => thats the root path of the application */}
           <Route path="/" element={<Home />} />

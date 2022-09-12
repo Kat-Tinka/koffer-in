@@ -12,6 +12,7 @@ import LogInView from "./views/LogInView/LogInView";
 import ChatView from "./views/ChatView/ChatView";
 import { useState } from "react";
 import { app } from "./components/Config/config";
+import { AuthContextProvider } from "./components/context/authContext";
 
 // function CountryDetail(params) {
 //   const navigate = useNavigate();
@@ -20,7 +21,7 @@ import { app } from "./components/Config/config";
 function App() {
   console.log("app", app);
   return (
-    <>
+    <AuthContextProvider>
       <div
         className="container"
         // style={{
@@ -41,7 +42,7 @@ function App() {
           <Route path="/country/:countryname" element={<CountryDetails />} />
         </Routes>
       </div>
-    </>
+    </AuthContextProvider>
   );
 }
 

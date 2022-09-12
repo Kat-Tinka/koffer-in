@@ -21,7 +21,7 @@ function RegisterView() {
   return (
     <div>
       <h2>Register</h2>
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email">Email{"    "}</label>
       <input
         type="email"
         name="email"
@@ -29,8 +29,11 @@ function RegisterView() {
         value={email}
         onChange={handleEmailHandler}
       />
-      <h2>Register</h2>
-      <label htmlFor="Password">Password</label>
+      <br />
+      <br />
+
+      {/* <h2>Register</h2> */}
+      <label htmlFor="Password">Password{"    "}</label>
       <input
         type="password"
         name="password"

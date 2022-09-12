@@ -1,7 +1,7 @@
 .countriesContainer {
   /* width: 100%; */
   padding: 0 10px;
-  background-repeat: no-repeat;
+  background-color: #0d2f54;
   /* background-size: 100% 100%; */
   display: grid;
   grid-template-columns: repeat(5, 20%);

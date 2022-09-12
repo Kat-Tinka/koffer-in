@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../components/context/authContext";
 
 function RegisterView() {
+  console.log("auth", AuthContext);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 

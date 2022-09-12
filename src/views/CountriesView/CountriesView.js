@@ -3,6 +3,10 @@ import Country from "../../components/Country/Country";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import "./CountriesView.css";
+import { Grid } from "@mui/material";
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 
 const CountriesView = () => {
   const [countries, setCountries] = useState([]);
@@ -22,15 +26,30 @@ const CountriesView = () => {
     setCountries(result);
   };
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   return (
-    <div>
+    <Box sx={{ flexGrow: 1 }}>
       <div>ALL COUNTRIES</div>
-      <div className="countriesContainer">
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 1, sm: 1, md: 12 }}
+      >
+        {/* <Grid container className="countriesContainer"> */}
         {countries.map((country) => (
-          <Country countries={country} />
+          <Grid item key={country.name.common}>
+            <Country countries={country} />
+          </Grid>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 // }

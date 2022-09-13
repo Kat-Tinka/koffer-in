@@ -45,7 +45,7 @@ function RegisterView() {
         onChange={handlePasswordHandler}
       />
       <button onClick={handleRegisterHandler}>Register</button>
-      <Link to="/LogIn">If you have an account already, go to LogIn></Link>
+      <Link to="/LogIn">If you have an account already, go to Login</Link>
     </div>
   );
 }

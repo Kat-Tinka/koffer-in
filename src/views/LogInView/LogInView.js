@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {AuthContext} from "../../components/context/authContext";
+import { AuthContext } from "../../components/context/authContext";
 
-function LogInView () {
+function LogInView() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,28 +17,12 @@ function LogInView () {
 
   const handleLoginHandler = () => {
     // Check if email is valid, password length ...
-    Login(email, password);
+    login(email, password);
   };
-  return (
-  // <div>
-  const [email, setEmail] = useState("null");
-  const [password, setPassword] = useState(null);
-
-  const { register } = useContext(AuthContext);
-
-  const handleEmailHandler = (e) => {
-    setEmail(e.target.value)
-  };
-  const handlePasswordHandler = (e) => {
-    setPassword(e.target.value)};
-
-  const handleRegisterHandler = () => {
-    // Check if email is valid, password length ...
-    register(email, password)}
 
   return (
     <div>
-      <h2>LogIn</h2>
+      <h2>Login</h2>
       <label htmlFor="email">Email{"    "}</label>
       <input
         type="email"
@@ -59,11 +43,13 @@ function LogInView () {
         value={password}
         onChange={handlePasswordHandler}
       />
-      <button onClick={handleLoginHandler}>LogIn</button>
-      <Link to="/Register">No account? Please register first</Link>
-    {/* </div> */}
+      <button onClick={handleLoginHandler}>Login</button>
+      <Link to="/Register">
+        {"  "}
+        No account? Please register first
+      </Link>
+    </div>
   );
-  
-
+}
 
 export default LogInView;

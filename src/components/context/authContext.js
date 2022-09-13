@@ -1,6 +1,7 @@
 import React from "react";
 import { createContext, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { auth } from "../Config/config";
 
 //1.Create Context
@@ -22,7 +23,7 @@ export const AuthContextProvider = (props) => {
       // Signed in
       const user = userCredential.user;
       // ...
-      console.log("userCredential", userCredential);
+      console.log("userCredential:>>  ", userCredential);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

@@ -38,17 +38,20 @@ export const AuthContextProvider = (props) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        // const user = userCredential.user;
         // ...
+        setUser(userCredential.user);
       })
       .catch((error) => {
+        setUser(null);
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorMessage);
       });
   };
 
   return (
-    <AuthContext.Provider value={{ user, setUser, register }}>
+    <AuthContext.Provider value={{ user, setUser, login }}>
       {props.children}
     </AuthContext.Provider>
   );

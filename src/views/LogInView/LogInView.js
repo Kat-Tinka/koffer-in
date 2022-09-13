@@ -16,7 +16,6 @@ function LogInView() {
   };
 
   const handleLoginHandler = () => {
-    // Check if email is valid, password length ...
     login(email, password);
   };
 

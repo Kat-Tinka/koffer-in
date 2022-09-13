@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../components/context/authContext";
 
 function RegisterView() {
@@ -16,6 +17,7 @@ function RegisterView() {
   };
 
   const handleRegisterHandler = () => {
+    // Check if email is valid, password length ...
     register(email, password);
   };
 
@@ -43,6 +45,7 @@ function RegisterView() {
         onChange={handlePasswordHandler}
       />
       <button onClick={handleRegisterHandler}>Register</button>
+      <Link to="/LogIn">If you have an account already, go to LogIn></Link>
     </div>
   );
 }

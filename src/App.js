@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // import React, { useState } from "react";
 import React, { Component } from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
+// import { BrowserRouter, Switch } from "react-router-dom";
 // import ListScreen from "./screen/ListScreen";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";

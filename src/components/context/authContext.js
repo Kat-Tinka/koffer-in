@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { auth } from "../Config/config";
 import { useNavigate } from "react-router-dom";
@@ -53,6 +54,11 @@ export const AuthContextProvider = (props) => {
         console.log(errorMessage);
       });
   };
+
+  const logout = () => {
+    setUser(null);
+    signOut(auth);
+  };
   // ----------------------------------------------
 
   // const checkIfUserisLoggedIn = () => {
@@ -77,7 +83,7 @@ export const AuthContextProvider = (props) => {
   // -------------------------------------------
 
   return (
-    <AuthContext.Provider value={{ user, setUser, register, login }}>
+    <AuthContext.Provider value={{ user, setUser, register, login, logout }}>
       {props.children}
     </AuthContext.Provider>
   );

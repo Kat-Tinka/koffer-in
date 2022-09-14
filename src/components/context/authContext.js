@@ -13,7 +13,7 @@ export const AuthContext = createContext();
 //2. Create the provider
 export const AuthContextProvider = (props) => {
   const [user, setUser] = useState(null);
-  const redirectTo = useNavigate;
+  const redirectTo = useNavigate();
 
   const register = async (email, password) => {
     console.log(email, password);

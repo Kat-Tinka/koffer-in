@@ -32,8 +32,6 @@ function LogInView() {
       />
       <br />
       <br />
-
-      {/* <h2>Register</h2> */}
       <label htmlFor="Password">Password{"    "}</label>
       <input
         type="password"

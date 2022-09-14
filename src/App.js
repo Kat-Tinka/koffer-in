@@ -39,7 +39,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegisterView />} />
           <Route path="/login" element={<LogInView />} />
-          <Route path="/chat" element={<ChatView />} />
+          <Route
+            // path="/chat"
+            path="chat"
+            element={
+              <ProtectedRoute>
+                <ChatView />
+              </ProtectedRoute>
+              // ={<ChatView />} />
+            }
+          />
           <Route path="/region" element={<RegionView />} />
           <Route path="/countries" element={<CountriesView />} />
           <Route path="/country/:countryname" element={<CountryDetails />} />

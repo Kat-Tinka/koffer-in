@@ -130,6 +130,7 @@ export default function NavBar() {
         <div></div>
         <Link to="/">Home </Link>|<Link to="/countries">Countries </Link>|
         <Link to="/region">Region </Link>|<Link to="/chat">Chat </Link>|
+        {/* {user && <Link to="/chat">Chat</Link>} */}
         {!user ? (
           <>
             <Button variant="info" href="/register">

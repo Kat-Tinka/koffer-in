@@ -178,7 +178,7 @@ export default function NavBar() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Koffer in ... / <br />
+          Koffer in ...{"{ Berlin }"} / <br />
           One Little Suitcase in...
         </Typography>
         <div></div>

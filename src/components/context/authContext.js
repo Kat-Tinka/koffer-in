@@ -1,8 +1,9 @@
 import React from "react";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../Config/config";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +25,7 @@ export const AuthContextProvider = (props) => {
         password
       );
       // Signed in
-      const user = userCredential.user;
+      // const user = userCredential.user;
       // ...
       console.log("userCredential:>>  ", userCredential);
       setUser(userCredential.user);
@@ -52,6 +53,28 @@ export const AuthContextProvider = (props) => {
         console.log(errorMessage);
       });
   };
+  // ----------------------------------------------
+
+  // const checkIfUserisLoggedIn = () => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       // User is signed in, see docs for a list of available properties
+  //       // https://firebase.google.com/docs/reference/js/firebase.User
+  //       const uid = user.uid;
+  //       // ...
+  //       setUser(user);
+  //     } else {
+  //       // User is signed out
+  //       // ...
+  //       setUser(null);
+  //     }
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   checkIfUserisLoggedIn();
+  // }, []);
+  // -------------------------------------------
 
   return (
     <AuthContext.Provider value={{ user, setUser, register, login }}>

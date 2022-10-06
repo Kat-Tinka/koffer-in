@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../../components/Config/config";
-import { AuthContext } from "../../components/context/authContext";
+import { auth } from "../../Config/config";
+import { AuthContext } from "../../context/authContext";
 
 function RegisterView() {
   console.log("auth :>> ", auth);
   // console.log("auth", AuthContext);
   const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState(null);
   const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState(null);
 
   const { register } = useContext(AuthContext);
 

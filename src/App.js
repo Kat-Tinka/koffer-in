@@ -14,8 +14,8 @@ import RegisterView from "./views/RegisterView/RegisterView";
 import LogInView from "./views/LogInView/LogInView";
 import ChatView from "./views/ChatView/ChatView";
 import { useState } from "react";
-import { app } from "./components/Config/config";
-import { AuthContextProvider } from "./components/context/authContext";
+import { app } from "./Config/config";
+import { AuthContextProvider } from "./context/authContext";
 
 // function CountryDetail(params) {
 //   const navigate = useNavigate();
@@ -43,9 +43,9 @@ function App() {
             // path="/chat"
             path="chat"
             element={
-              <ProtectedRoute>
-                <ChatView />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+              <ChatView />
+              // </ProtectedRoute>
               // ={<ChatView />} />
             }
           />

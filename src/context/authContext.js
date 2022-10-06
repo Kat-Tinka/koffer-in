@@ -6,7 +6,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { auth } from "../Config/config";
+import { auth } from "../../Config/config";
 import { useNavigate } from "react-router-dom";
 
 //1.Create Context
@@ -61,25 +61,25 @@ export const AuthContextProvider = (props) => {
   };
   // ----------------------------------------------
 
-  // const checkIfUserisLoggedIn = () => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       // User is signed in, see docs for a list of available properties
-  //       // https://firebase.google.com/docs/reference/js/firebase.User
-  //       const uid = user.uid;
-  //       // ...
-  //       setUser(user);
-  //     } else {
-  //       // User is signed out
-  //       // ...
-  //       setUser(null);
-  //     }
-  //   });
-  // };
+  const checkIfUserisLoggedIn = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        // ...
+        setUser(user);
+      } else {
+        // User is signed out
+        // ...
+        setUser(null);
+      }
+    });
+  };
 
-  // useEffect(() => {
-  //   checkIfUserisLoggedIn();
-  // }, []);
+  useEffect(() => {
+    checkIfUserisLoggedIn();
+  }, []);
   // -------------------------------------------
 
   return (

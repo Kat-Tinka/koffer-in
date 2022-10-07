@@ -16,7 +16,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 // import { CharactersContext } from "../context/charactersContext";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../../context/authContext";
+// import { AuthContext } from "../../context/authContext";
 
 function Home() {
   // const { characters } = useContext(CharactersContext);

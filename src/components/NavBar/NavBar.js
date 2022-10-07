@@ -102,7 +102,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useContext, useState } from "react";
 // import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../../context/authContext";
 
 ///////////////////////////////////////////////////////////////////////////////
 

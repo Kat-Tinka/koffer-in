@@ -7,7 +7,7 @@ const ChatView = () => {
   const { user } = useContext(AuthContext);
 
   const [chats, setChats] = useState([]);
-  const [input, setInput] = useState("msg");
+  const [input, setInput] = useState("your message:");
 
   const getMessages = async () => {
     const querySnapshot = await getDocs(collection(db, "chat"));
@@ -39,7 +39,7 @@ const ChatView = () => {
       <div>CHAT-VIEW</div>;
       {chats.map((chat) => {
         return (
-          <div>
+          <div style={{border:"solid 1px"}}>
             <h4>{chat.user}</h4>
             <p>{chat.text}</p>
             <p>{chat.timestamp.toString()}</p>

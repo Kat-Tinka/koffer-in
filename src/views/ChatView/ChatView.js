@@ -2,6 +2,8 @@ import React, { useEffect, useContext, useState } from "react";
 import { collection, getDocs, doc, addDoc } from "firebase/firestore";
 import { db } from "../../Config/config";
 import { AuthContext } from "../../context/authContext";
+import NavBar from "../../components/NavBar/NavBar";
+
 
 const ChatView = () => {
   const { user } = useContext(AuthContext);
@@ -34,9 +36,21 @@ const ChatView = () => {
   }, []);
 
   console.log("input", input);
+
+  const style ={
+    ChatViewContainer:`max-w-[728px] mx-auto text-center`,
+    sectionContainer:`flex flex-col h-[auto] bg-gray-100 mt-10 shadow-xl border relative`
+
+  }
+
   return (
-    <div>
-      <div>CHAT-VIEW</div>;
+    <div
+        className={style.ChatViewContainer}>
+        <section className={style.sectionContainer}>
+        {/* <NavBar/> */}
+        <div className={style.nav}>
+          <h1 className={style.heading}>CHAT APP</h1>
+        </div>
       {chats.map((chat) => {
         return (
           <div style={{border:"solid 1px"}}>
@@ -54,6 +68,7 @@ const ChatView = () => {
         id=""
       />
       <button onClick={addMessage}>Add</button>
+      </section>
     </div>
   );
 };

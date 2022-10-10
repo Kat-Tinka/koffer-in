@@ -103,6 +103,7 @@ import { useContext, useState } from "react";
 // import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
+import { style } from "@mui/system";
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -110,7 +111,16 @@ export default function NavBar() {
   const { logout, user } = useContext(AuthContext);
   const [open, setisOpen] = useState(false);
 
+  //Chat App Style- NavBar
+  // const style = {
+  //   nav: `bg-gray-800 h-20 flex justify-between items-center p-4`,
+  //   heading: `text-white text-3xl`
+  // }
+
   return (
+    // <div className ={style.nav}>
+    //   <h1 className={style.heading}></h1>
+    // </div>
     <AppBar position="sticky">
       <Toolbar>
         <IconButton
@@ -127,7 +137,7 @@ export default function NavBar() {
           Koffer in ...{"{ Berlin }"} / <br />
           One Little Suitcase in...
         </Typography>
-        <div></div>
+        
         <Link to="/">Home </Link>|<Link to="/countries">Countries </Link>|
         <Link to="/region">Region </Link>|<Link to="/chat">Chat </Link>|
         {/* {user && <Link to="/chat">Chat</Link>} */}

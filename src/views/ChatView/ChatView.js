@@ -2,8 +2,16 @@ import React, { useEffect, useContext, useState } from "react";
 import { collection, getDocs, doc, addDoc } from "firebase/firestore";
 import { db } from "../../Config/config";
 import { AuthContext } from "../../context/authContext";
+// import {auth} from './auth'
 import NavBar from "../../components/NavBar/NavBar";
+import { query, orderBy, limit } from "firebase/firestore";  
 
+// const style = {
+//   message:`flex items-center shadow-xl m-4 py-2 px-3 rounded-tl-full rounded-tr-full`,
+//   name: `fixed mt-[-4rem] text-gray-600 text-xs`,
+//   sent:`bg-[#395dff] text-white flex-row-reverse text-end float-right`,
+//   received: `bg-[#e5e5ea] text-black float-left rounded-br-full`
+// }
 
 const ChatView = () => {
   const { user } = useContext(AuthContext);
@@ -12,14 +20,35 @@ const ChatView = () => {
   const [input, setInput] = useState("your message:");
 
   const getMessages = async () => {
-    const querySnapshot = await getDocs(collection(db, "chat"));
-    console.log("querySnapshot :>> ", querySnapshot);
+    const chatRef = collection(db, "chat");
+    const q = query(chatRef, orderBy("timestamp", "asc"));
+    const querySnapshot = await getDocs(q);
     const arr = [];
     querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, " => ", doc.data());
       arr.push(doc.data());
     });
-    setChats(arr);
+console.log('arr', arr)
+    // const querySnapshot = await getDocs(collection(db, "chat"));
+    // console.log("querySnapshot :>> ", querySnapshot);
+    // const arr = [];
+    // querySnapshot.forEach((doc) => {
+    //   arr.push(doc.data());
+      
+    // });
+     setChats(arr);
   };
+  // const getMessages = async () => {
+  //   const querySnapshot = await getDocs(collection(db, "chat"));
+  //   console.log("querySnapshot :>> ", querySnapshot);
+  //   const arr = [];
+  //   querySnapshot.forEach((doc) => {
+  //     arr.push(doc.data());
+      
+  //   });
+  //   setChats(arr);
+  // };
 
   const addMessage = async () => {
     // Add a new document in collection "cities"
@@ -40,8 +69,20 @@ const ChatView = () => {
   const style ={
     ChatViewContainer:`max-w-[728px] mx-auto text-center`,
     sectionContainer:`flex flex-col h-[auto] bg-gray-100 mt-10 shadow-xl border relative`
+  }
+
+  const Message = () => {
+    return (
+      <div>
+        <div className={style.message}>
+          <p classNAME={style.name}>K.</p>
+          <p>Test Message, just written here.</p>
+        </div>
+      </div>
+    )
 
   }
+
 
   return (
     <div
@@ -52,11 +93,12 @@ const ChatView = () => {
           <h1 className={style.heading}>CHAT APP</h1>
         </div>
       {chats.map((chat) => {
+        const date = chat.timestamp.toDate()
         return (
           <div style={{border:"solid 1px"}}>
             <h4>{chat.user}</h4>
             <p>{chat.text}</p>
-            <p>{chat.timestamp.toString()}</p>
+            <p>{date.toLocaleString()}</p>
           </div>
         );
       })}
@@ -74,3 +116,4 @@ const ChatView = () => {
 };
 
 export default ChatView;
+

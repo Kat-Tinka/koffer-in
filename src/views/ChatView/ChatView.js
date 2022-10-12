@@ -3,7 +3,7 @@ import { collection, getDocs, doc, addDoc } from "firebase/firestore";
 import { db } from "../../Config/config";
 import { AuthContext } from "../../context/authContext";
 // import {auth} from './auth'
-import NavBar from "../../components/NavBar/NavBar";
+// import NavBar from "../../components/NavBar/NavBar";
 import { query, orderBy, limit } from "firebase/firestore";  
 
 // const style = {
@@ -89,6 +89,7 @@ console.log('arr', arr)
         className={style.ChatViewContainer}>
         <section className={style.sectionContainer}>
         {/* <NavBar/> */}
+        
         <div className={style.nav}>
           <h1 className={style.heading}>CHAT APP</h1>
         </div>

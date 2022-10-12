@@ -33,6 +33,7 @@ const CountriesView = () => {
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
+  
 
   return (
     <Box sx={{ flexGrow: 1 }}>

@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 import {auth} from "../../../src/App";
 import { style } from "@mui/system";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -55,6 +56,10 @@ export default function NavBar() {
           One Little Suitcase in...
         </Typography>
         
+        {user && <Avatar>
+          <AccountCircleIcon />
+        </Avatar>}
+
         <Link to="/">Home </Link>|<Link to="/countries">Countries </Link>|
         <Link to="/region">Region </Link>|<Link to="/chat">Chat </Link>|
         {/* {user && <Link to="/chat">Chat</Link>} */}

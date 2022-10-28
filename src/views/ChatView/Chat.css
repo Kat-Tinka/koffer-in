@@ -1,0 +1,19 @@
+.test {color:rgb(33, 19, 159) ; 
+
+}
+.user {
+   color: red
+}
+
+.right-pos {
+   
+   float: right;
+   background-color: aqua;
+}
+
+.left-pos {
+   float: left;
+   background-color: green;
+}
+
+

@@ -58,6 +58,7 @@ export const AuthContextProvider = (props) => {
   const logout = () => {
     setUser(null);
     signOut(auth);
+    redirectTo("/")
   };
   // ----------------------------------------------
 

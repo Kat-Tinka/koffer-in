@@ -17,6 +17,7 @@ import { useState } from "react";
 import { app } from "./Config/config";
 import { AuthContextProvider } from "./context/authContext";
 import {auth} from './Config/config'
+import ProtectedRoute from "./components/ProtectedRoute";
 // import { getAuth } from "./firebase/auth";
 
 
@@ -52,8 +53,12 @@ function App() {
             // path="/chat"
             path="chat"
             element={
+              <ProtectedRoute>
+                <ChatView />
+
+              </ProtectedRoute>
               // <ProtectedRoute>
-              <ChatView />
+              
               // </ProtectedRoute>
               // ={<ChatView />} />
             }
